@@ -9,7 +9,7 @@ Write a Java program to convert Temperature from Fahrenheit to Celsius and vice 
 --> Temperature.java
 
 Write a Java program to add two numbers.
---> Add.java
+--> Addition.java
 
 Write a java Program to find the area and Perimeter of a rectangle.
 --> Rectangle.java
@@ -18,10 +18,10 @@ Write a program in Java to find the maximum of three numbers.
 --> Maximum.java
 
 Write a Java Program to check whether a given year is a leap year.
---> Leap.java
+--> Leapyear.java
 
 Create four different classes with three of them containing the function main. Save the file with a different name than that of the class name and run each of the classes with the main function.
---> ManyClass.java
+--> Classes.java
 
 Write a java program to reverse a number entered as a command line argument.
 --> Reverse.java
