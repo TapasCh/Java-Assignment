@@ -318,3 +318,141 @@ public class ThreadCounter {
     }
 }
 
+
+
+
+For a  Mobile  Shop project
+
+
+package Phone;
+public class Telephone {
+private int mobile_id;
+private String model_name;
+private int available_quantity;
+public Telephone(int mobile_id, String model_name, int available_quantity) {
+this.mobile_id = mobile_id;
+this.model_name = model_name;
+
+this.available_quantity = available_quantity;
+}
+public int getMobileId() {
+return mobile_id;
+}
+public String getModelName() {
+return model_name;
+}
+public int getAvailableQuantity() {
+return available_quantity;
+}
+public void setAvailableQuantity(int available_quantity) {
+this.available_quantity = available_quantity;
+}
+}
+package Smart;
+import Phone.Telephone;
+public class SmartPhone extends Telephone{
+private boolean enabled_5G;
+private boolean foldable;
+private boolean dual_screen;
+public SmartPhone(int mobile_id, String model_name, int available_quantity, boolean
+enabled_5G, boolean foldable, boolean dual_screen) {
+super(mobile_id, model_name, available_quantity);
+this.enabled_5G = enabled_5G;
+this.foldable = foldable;
+this.dual_screen = dual_screen;
+}
+
+public boolean is5GEnabled() {
+return enabled_5G;
+}
+public boolean isFoldable() {
+return foldable;
+}
+public boolean isDualScreen() {
+return dual_screen;
+}
+public void displayDetails() {
+System.out.println("Mobile ID: " + getMobileId());
+System.out.println("Model Name: " + getModelName());
+System.out.println("Available Quantity: " + getAvailableQuantity());
+System.out.println("5G Enabled: " + (enabled_5G ? "Yes" : "No"));
+System.out.println("Foldable: " + (foldable ? "Yes" : "No"));
+System.out.println("Dual Screen: " + (dual_screen ? "Yes" : "No"));
+}
+}
+package Smart;
+import java.util.Scanner;
+import Smart.SmartPhone;
+public class Driven {
+public static void main(String[] args) {
+System.out.println("Name : Tapas Chatterjee Roll No: 19");
+Scanner sc = new Scanner(System.in);
+SmartPhone[] smartPhones = new SmartPhone[3];
+smartPhones[0] = new SmartPhone(1, "iPhone XR", 10, true, false, false);
+smartPhones[1] = new SmartPhone(2, "Galaxy S21", 15, true, false, false);
+
+smartPhones[2] = new SmartPhone(3, "Pixel 6", 20, true, false, false);
+
+int choice;
+
+do {
+System.out.println("1. Display Smart Phone Details");
+System.out.println("2. Update Quantity");
+System.out.println("3. Exit");
+System.out.print("Enter your choice: ");
+choice = sc.nextInt();
+
+switch (choice) {
+case 1:
+displaySmartPhoneDetails(smartPhones);
+break;
+case 2:
+updateQuantity(smartPhones, sc);
+break;
+case 3:
+break;
+default:
+System.out.println("Invalid choice! Try again.");
+}
+} while (choice != 3);
+}
+
+public static void displaySmartPhoneDetails(SmartPhone[] smartPhones)
+
+{
+
+System.out.println("Mobile ID\tModel Name\tAvailable Quantity\tEnabled
+
+5G\tFoldable\tDual Screen");
+
+for (SmartPhone smartPhone : smartPhones) {
+System.out.println(smartPhone.getMobileId() + "\t\t" +
+
+smartPhone.getModelName() + "\t\t" +
+
+smartPhone.getAvailableQuantity() + "\t\t" + smartPhone.is5GEnabled() +
+
+"\t\t" +
+
+smartPhone.isFoldable() + "\t\t" + smartPhone.isDualScreen());
+}
+}
+
+public static void updateQuantity(SmartPhone[] smartPhones, Scanner sc)
+
+{
+
+System.out.print("Enter the mobile ID: ");
+int mobileId = sc.nextInt();
+for (SmartPhone smartPhone : smartPhones) {
+if (smartPhone.getMobileId() == mobileId) {
+System.out.print("Enter the new quantity: ");
+smartPhone.setAvailableQuantity(sc.nextInt());
+System.out.println("Quantity updated successfully!");
+return;
+}
+}
+System.out.println("Mobile ID not found!");
+}
+
+}
