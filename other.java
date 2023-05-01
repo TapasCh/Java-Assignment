@@ -122,3 +122,145 @@ System.out.print("*");
 }
 }
 }
+                 
+                 
+                 
+   Create an interface Department containing attributes deptName and
+deptHead. It also has abstract methods for printing the attributes.
+Create a class hostel containing hostelName, hostelLocation and
+numberofRooms. The class contains methods for getting and
+printing the attributes. Then write a Student class extending the
+Hostel class and implementing the Department interface. This class
+contains attributes studentName, regdNo, electiveSubject and
+avgMarks. Write suitable getData and printData methods for this
+
+class. Also, implement the abstract methods of the Department
+interface. Write a driver class to test the Student class. The program
+should be menu driven containing the options:
+i) Admit new student
+ii) Migrate a student
+iii) Display details of a student
+For the third option, a search is to be made on the basis of the entered
+registration number.
+  
+  
+  
+  
+  
+  import java.util.ArrayList;
+import java.util.Scanner;
+interface Department {
+String deptName = "";
+String deptHead = "";
+void printDeptDetails();
+}
+public class Hostel {
+String hostelName;
+String hostelLocation;
+int numberOfRooms;
+Hostel(String hostelName, String hostelLocation, int numberOfRooms) {
+this.hostelName = hostelName;
+this.hostelLocation = hostelLocation;
+this.numberOfRooms = numberOfRooms;
+
+}
+void printHostelDetails() {
+System.out.println("Hostel Name: " + hostelName);
+System.out.println("Hostel Location: " + hostelLocation);
+System.out.println("Number of Rooms: " + numberOfRooms);
+}
+}
+class Student extends Hostel implements Department {
+String studentName;
+int regdNo;
+String electiveSubject;
+double avgMarks;
+Student(String hostelName, String hostelLocation, int numberOfRooms, String studentName,
+int regdNo, String electiveSubject, double avgMarks) {
+super(hostelName, hostelLocation, numberOfRooms);
+this.studentName = studentName;
+this.regdNo = regdNo;
+this.electiveSubject = electiveSubject;
+this.avgMarks = avgMarks;
+}
+public void printDeptDetails() {
+System.out.println("Department Name: " + deptName);
+System.out.println("Department Head: " + deptHead);
+}
+void printStudentDetails() {
+System.out.println("Student Name: " + studentName);
+System.out.println("Registration Number: " + regdNo);
+System.out.println("Elective Subject: " + electiveSubject);
+System.out.println("Average Marks: " + avgMarks);
+printHostelDetails();
+
+}
+}
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Drive {
+public static void main(String[] args) {
+System.out.println("Name: Tapas Chatterjee Roll: 19");
+ArrayList<Student> stu = new ArrayList<>();
+Scanner sc = new Scanner(System.in);
+while (true) {
+System.out.println("Enter the option number:");
+System.out.println("1. Admit new student");
+System.out.println("2. Migrate a student");
+System.out.println("3. Display details of a student");
+System.out.println("4. Exit");
+int option = sc.nextInt();
+switch (option) {
+case 1:
+System.out.println("Enter Hostel Name:");
+String hostelName = sc.next();
+System.out.println("Enter Hostel Location:");
+String hostelLocation = sc.next();
+System.out.println("Enter Number of Rooms:");
+int numberOfRooms = sc.nextInt();
+System.out.println("Enter Student Name:");
+String studentName = sc.next();
+System.out.println("Enter Registration Number:");
+int regdNo = sc.nextInt();
+System.out.println("Enter Elective Subject:");
+
+String electiveSubject = sc.next();
+System.out.println("Enter Average Marks:");
+double avgMarks = sc.nextDouble();
+stu.add(new Student(hostelName, hostelLocation, numberOfRooms, studentName, regdNo,
+electiveSubject, avgMarks));
+System.out.println("Student Admitted Successfully!");
+break;
+case 2:
+System.out.println("Enter Registration Number of Student to Migrate:");
+int regdNoToMigrate = sc.nextInt();
+boolean isFound = false;
+for (Student student : stu) {
+if (student.regdNo == regdNoToMigrate) {
+stu.remove(student);
+System.out.println("Student Migrated Successfully!");
+isFound = true;
+break;
+}
+}
+if (!isFound) {
+System.out.println("Student not found");
+}
+
+case 3:
+System.out.println("Enter Registration Number of Student to Display:");
+int display = sc.nextInt();
+for (Student st : stu) {
+if (st.regdNo == display) {
+st.printStudentDetails();
+}else
+
+System.out.println(" Student Not found");
+
+}
+}
+}
+}
+}
+                 
+                 
