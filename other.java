@@ -1,5 +1,5 @@
 
-The process of finding the largest value (i.e., the maximum of a group of values) is used frequently in computer applications. For example, a program that determines the winner of a sales contest would input the number of units sold by each salesperson. The salesperson who sells the most units wins the contest. Build a java application that inputs a series of 10 integers and determines and prints the largest integer. Your program should use at least the following three variables:
+1)----The process of finding the largest value (i.e., the maximum of a group of values) is used frequently in computer applications. For example, a program that determines the winner of a sales contest would input the number of units sold by each salesperson. The salesperson who sells the most units wins the contest. Build a java application that inputs a series of 10 integers and determines and prints the largest integer. Your program should use at least the following three variables:
 counter: A counter to count to 10 (i.e. to keep track of how many numbers have been input and to determine when all 10 numbers have been processed.
 number: The inter most recently input by the user.
 largest: The largest number found so far.
@@ -39,8 +39,7 @@ System.out.println("The largest sales of the product is: " + largest);
 }
 }
                  
-                 
-                 Using an enhanced for (for-each) loop, copy the content of one 3-dimensional array to another 3-dimensional array and display its contents.
+                 2)---- Using an enhanced for (for-each) loop, copy the content of one 3-dimensional array to another 3-dimensional array and display its contents.
                  
                  public class Problem4 {
 public static void main(String[] args) {
@@ -75,7 +74,7 @@ System.out.println();
 }
                  
                  
-                 
+      3)----           
                  ************
 \                    / 
 /                    \ 
@@ -125,7 +124,7 @@ System.out.print("*");
                  
                  
                  
-   Create an interface Department containing attributes deptName and
+4)---   Create an interface Department containing attributes deptName and
 deptHead. It also has abstract methods for printing the attributes.
 Create a class hostel containing hostelName, hostelLocation and
 numberofRooms. The class contains methods for getting and
