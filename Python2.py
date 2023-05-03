@@ -1,4 +1,4 @@
-Write a Python program to addition, subtraction, multiplication &amp; transpose operations for matrix.
+1) Write a Python program to addition, subtraction, multiplication &amp; transpose operations for matrix.
 import numpy as np
 
 # create two matrices
@@ -59,7 +59,23 @@ Output:
 5 : 1
     
 
-    
+ 3) Python program to print the duplicate elements of an array:
+
+# create an array
+arr = [1, 2, 3, 4, 1, 2, 3, 5, 1, 2, 1]
+
+# find the duplicate elements
+duplicates = set([x for x in arr if arr.count(x) > 1])
+
+# print the duplicate elements
+print("Duplicate elements:", duplicates)
+
+
+Output:
+Duplicate elements: {1, 2, 3}
+ 
+ 
+ 
     
 4. Python program to sort the elements of an array in ascending and descending order:
 
@@ -88,7 +104,7 @@ Descending order: [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]
 my_list = [9, 2, 5, 1, 7, 4, 8, 6, 3]
 # sort the list in ascending order
 my_list.sort()
-print("Sorted list (ascending order):", my_list
+print("Sorted list (ascending order):", my_list)
 # sort the list in descending order
 my_list.sort(reverse=True)
 print("Sorted list (descending order):", my_list)
@@ -144,7 +160,7 @@ print("Sorted Array:", sorted_array)
 6. Write a Python Program to create a Class called StudentInfo, which contains StudentName, StudentRollNumber, StudentMarks. Create five Objects of this Class and Initialize these Objects with Student Informatio for 5 students. Find the average of the marks obtained by 5 students.
 
 class StudentInfo:
-    def init(self, name, roll_no, marks):
+    def  __init__(self, name, roll_no, marks):
         self.StudentName = name
         self.StudentRollNumber = roll_no
         self.StudentMarks = marks
@@ -172,7 +188,6 @@ print("Average marks obtained by the five students:", avg_marks)
       
       
       
-      
  Assignment 4######
       
  1. Write a Python program to find frequency of each element in an array. Assume the array to be Arr = [1, 2, 8, 2, 3, 8, 2, 2, 1, 2, 2, 5, 1, 5, 3, 5 ]; 
@@ -195,19 +210,18 @@ for elem, freq in freq_dict.items():
 
 2. Define a function in python and pass two integer variables to the function by pass by reference and swap these two numbers inside the function. 
 
-def swap_numbers(a, b):
-    temp = a
-    a = b
-    b = temp
+def swap_numbers(a_list):
+    a_list[0], a_list[1] = a_list[1], a_list[0]
 
-# define two integer variables and print their values
+# Example usage
 x = 5
 y = 10
-print("Before swapping: x =", x, "y =", y)
+numbers = [x, y]
+print("Before swap: x =", x, "and y =", y)
+swap_numbers(numbers)
+x, y = numbers
+print("After swap: x =", x, "and y =", y)
 
-# call the swap_numbers function and print the values of x and y again
-swap_numbers(x, y)
-print("After swapping: x =", x, "y =", y)
 
 3. Implement a python program to demonstrate function overloading feature supported by python. 
 
@@ -224,26 +238,22 @@ print(sum(1, 2, 3))     # Output: 6
 
 4. Write a python program which defines a simple class which has just a constructor and a destructor (with no member functions or data members), and create an instance of array of classes allocating it memory dynamically. At the end of the program de-allocate the memory. 
 
-import ctypes
-
 class MyClass:
-    def init(self):
-        print("Constructor called")
+    def __init__(self):
+        print("Constructor called.")
 
-    def del(self):
-        print("Destructor called")
+    def __del__(self):
+        print("Destructor called.")
 
-# create an array of MyClass instances
-n = 5
-arr = (MyClass * n)()
 
-# access the elements of the array
-for i in range(n):
-    arr[i] = MyClass()
+# Create an array of 5 MyClass instances using dynamic memory allocation
+my_class_array = [MyClass() for i in range(5)]
 
-# deallocate the memory allocated for the array
-del arr
+# Deallocate the memory
+del my_class_array
 
+      
+      
 5. Write a Python program to calculate the average value of the numbers in a given tuple of tuples. Original Tuple: ((10, 10, 10, 12), (30, 45, 56, 45), (81, 80, 39, 32), (1, 2, 3, 4)) Average value of the numbers of the said tuple of tuples: [30.5, 34.25, 27.0, 23.25]
 
 t = ((10, 10, 10, 12), (30, 45, 56, 45), (81, 80, 39, 32), (1, 2, 3, 4))
