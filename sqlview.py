@@ -1,3 +1,8 @@
+set set serveroutput on;
+
+
+
+
 1. From the following table, create a view for those salespeople who belong to the city of
 New York.
 
