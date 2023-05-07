@@ -1,4 +1,4 @@
-set set serveroutput on;
+set serveroutput on;/pl/sql
 
 
 
